@@ -55,14 +55,14 @@ def doSth():
       count+=1
       
       
-def main(h=15, m=53):
+def main(h=15, m=59):
 
     while True:
 
 
         while True:
 
-            now = datetime.datetime.now()
+            now = datetime.now()
 
 
 
