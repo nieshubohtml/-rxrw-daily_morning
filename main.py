@@ -56,7 +56,7 @@ def doSth():
       count+=1
       
       
-def main(h=16, m=06):
+def main(h=16, m=6):
 
     while True:
 
