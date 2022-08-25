@@ -70,7 +70,7 @@ def main(h=15, m=53):
 
                 break
 
-            time.sleep(20)
+            time.sleep(50)
             
         doSth()
 main()
