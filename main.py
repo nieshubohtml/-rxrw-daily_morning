@@ -56,7 +56,7 @@ def doSth():
       count+=1
       
       
-def main(h=15, m=59):
+def main(h=16, m=06):
 
     while True:
 
@@ -71,7 +71,7 @@ def main(h=15, m=59):
 
                 break
 
-            time.sleep(50)
+            time.sleep(20)
             
         doSth()
 main()
