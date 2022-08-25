@@ -5,6 +5,7 @@ from wechatpy.client.api import WeChatMessage, WeChatTemplate
 import requests
 import os
 import random
+import time
 def doSth():
     today = datetime.now() + timedelta(hours=8)
     start_date = os.environ['START_DATE']
