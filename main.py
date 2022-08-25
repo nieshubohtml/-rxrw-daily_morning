@@ -5,8 +5,25 @@ from wechatpy.client.api import WeChatMessage, WeChatTemplate
 import requests
 import os
 import random
-
-today = datetime.now() + timedelta(hours=8)
+import time
+while True:
+    now_hour = time.strftime("%H", time.localtime())
+    now_min = time.strftime("%M", time.localtime())
+    if now_hour < "08":
+        rest = 8 - int(now_hour)
+        sleeptime = (rest-1)*3600 + (60-int(now_min))*60
+        print("启动时北京时间为："+time.strftime("%H:%M", time.localtime()),"\t 软件将在",rest-1,"小时",int((sleeptime-(rest-1)*3600)/60),"分钟后发送数据")
+        time.sleep(sleeptime)
+    elif now_hour > "08":
+        rest = 8 - int(now_hour) + 24
+        sleeptime = (rest-1)*3600 + (60-int(now_min))*60
+        print("启动时北京时间为："+time.strftime("%H:%M", time.localtime()),"\t 软件将在",rest-1,"小时",int((sleeptime-(rest-1)*3600)/60),"分钟后发送数据")
+        time.sleep(sleeptime)
+    elif now_hour == "08":
+        print("启动时北京时间为：" + time.strftime("%H:%M", time.localtime()), "\t 软件将在每天 8 点发送数据！")
+        # 以下为定时任务
+        print("数据")
+        today = datetime.now() + timedelta(hours=8)
 start_date = os.environ['START_DATE']
 city = os.environ['CITY']
 birthday = os.environ['BIRTHDAY']
@@ -55,3 +72,4 @@ for user_id in user_ids:
   count+=1
 
 print("发送了" + str(count) + "条消息")
+        time.sleep(86400-int(now_min)*60)
